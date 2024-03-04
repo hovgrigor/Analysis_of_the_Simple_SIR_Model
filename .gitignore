@@ -1,9 +1,14 @@
-Project\Latex\latex-thesis-template\*.aux
-Project\Latex\latex-thesis-template\tex-paper.bbl
-Project\Latex\latex-thesis-template\tex-paper.fdb_latexmk
-Project\Latex\latex-thesis-template\tex-paper.fls
-Project\Latex\latex-thesis-template\tex-paper.out
-Project\Latex\latex-thesis-template\tex-paper.pdf
-Project\Latex\latex-thesis-template\tex-paper.log
-Project\Latex\latex-thesis-template\tex-paper.synctex.gz
-Project\Latex\latex-thesis-template\tex-paper.toc
+Project/Latex/latex-thesis-template/*.aux
+Project/Latex/latex-thesis-template/tex-paper.bbl
+Project/Latex/latex-thesis-template/tex-paper.fdb_latexmk
+Project/Latex/latex-thesis-template/tex-paper.fls
+Project/Latex/latex-thesis-template/tex-paper.out
+Project/Latex/latex-thesis-template/tex-paper.pdf
+Project/Latex/latex-thesis-template/tex-paper.log
+Project/Latex/latex-thesis-template/tex-paper.synctex.gz
+Project/Latex/latex-thesis-template/tex-paper.toc
+Figures/
+Homework Done/
+Homework to Do/
+Python/
+Project/Data/
