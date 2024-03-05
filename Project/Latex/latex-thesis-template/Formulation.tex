@@ -36,7 +36,33 @@ A fixed fraction $\gamma$ of the infected group will be recovered during any giv
 For instance, assuming an average infection duration of three days, approximately one-third of the presently infected population typically transitions to the recovered state daily.
 It is important to clarify that when referring to ``infected,'' the term specifically denotes ``infectious,'' indicating individuals capable of transmitting the disease to susceptible individuals.
 Conversely, individuals classified as ``recovered'' may still experience discomfort, and there remains a risk of complications such as pneumonia-related fatalities at a later stage.
+These assumptions inform the derivatives of our dependent variables.
+\begin{equation}
+    \frac{\partial s}{\partial t} = -\beta s(t)  i(t)
+\end{equation}
+\begin{equation}
+    \frac{\partial r}{\partial t} = \gamma i(t)
+\end{equation}
 
+As the sum of \textit{susceptable, infected and recovered} people gives the whole population, it means that\\
+\begin{equation}
+    \frac{\partial s}{\partial t} + \frac{\partial i}{\partial t}+\frac{\partial r}{\partial t} = 0
+\end{equation}
+To get the differential equation for \textit{infecteds} it is enough to plug equations $(1)$ and $(2)$ into equation $(3)$.
+The result will be:
+\begin{equation}
+    \frac{\partial i}{\partial t} = \beta s(t)  i(t) - \gamma i(t)
+\end{equation}
+Combining all three equations will give the following system of differential equations:
+\[
+\left\{
+    \begin{array}{l}
+        \frac{\partial s}{\partial t} = -\beta s(t)  i(t)\\
+        \frac{\partial r}{\partial t} = \gamma i(t)\\
+        \frac{\partial i}{\partial t} = \beta s(t)  i(t) - \gamma i(t)
+    \end{array}
+\right.
+\]
 
 
 
