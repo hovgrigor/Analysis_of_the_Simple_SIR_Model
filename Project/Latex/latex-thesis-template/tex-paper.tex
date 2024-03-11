@@ -142,12 +142,7 @@ Finally, we will draw conclusions and discuss how much of an impact the model ca
 \include{RealWorld}
 \include{Conclusion}
 
-% Bibliography
-\newpage
-\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
-\lhead{Bibliography}
-\rhead{}
-\printbibliography
+
 
 % Appendices, remove if unused
 \appendix
@@ -157,5 +152,13 @@ Finally, we will draw conclusions and discuss how much of an impact the model ca
 \rhead{}
 \include{appendix-a}
 \include{appendix-b}
+
+% Bibliography
+\newpage
+\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+\lhead{References}
+\rhead{}
+\renewcommand\refname{References}
+\printbibliography
 
 \end{document}
