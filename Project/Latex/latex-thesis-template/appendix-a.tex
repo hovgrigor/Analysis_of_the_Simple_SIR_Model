@@ -1,0 +1,73 @@
+\section{Appendix: Extensions and Modifications}\label{appendix-a}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\hspace{\parindent}The basic SIR model can be expanded and modified in various ways to incorporate factors such as death and birth rates, vaccination rates, reinfection rates, and other significant variables, leading to more accurate calculations and predictions.
+One famous modification was made by Yamamoto in 2018.
+Let death rate be denoted by $\alpha$ and death rate be denoted by $\mu$.
+The birth rate contributes to an increase in the size of the susceptible population, while the death rate leads to a decrease in its size.
+The extent of this change can be calculated as:
+\begin{equation*}
+    \frac{\partial s}{\partial t} = \alpha - \mu s(t) - \beta s(t)i(t)
+\end{equation*}
+\hspace{\parindent}Yamamoto made another modification of the SIR model.
+In this modification he took into consideration the inoculation rate of vaccine.
+Let $\varepsilon$ be the rate at which individuals are vaccinated within a given population.
+Incorporating this parameter leads to an increase in the population within the recovered group, thus resulting in the following modifications to the model equations:
+\begin{equation*}
+    \frac{\partial s}{\partial t} = \alpha(1 - \varepsilon) - \mu s(t)i(t)
+\end{equation*}
+\begin{equation*}
+    \frac{\partial i}{\partial t} = \beta s(t)i(t) - (\gamma + \mu)(t)
+\end{equation*}
+\begin{equation*}
+    \frac{\partial r}{\partial t} = \alpha\varepsilon + \gamma i(t) - \mu r(t)
+\end{equation*}
+\hspace{\parindent}Satoru Yamamoto examined the combined impact of both vaccination and the rate of reinfection as well.
+A small portion of the population might get reinfected at a reinfaction rate $\sigma$.
+The equation will look in the following way after making the modification:
+\begin{equation*}
+    \frac{\partial s}{\partial t} = \alpha(1 - \varepsilon) - \mu s(t)i(t)
+\end{equation*}
+\begin{equation*}
+    \frac{\partial i}{\partial t} = \beta[s(t) + \sigma r(t)]i(t) - (\gamma + \mu)(t)
+\end{equation*}
+\begin{equation*}
+    \frac{\partial r}{\partial t} = \alpha \varepsilon + \gamma i(t) - \mu r(t) - \beta \sigma r(t)i(t)
+\end{equation*}
+\hspace{\parindent}There is an extension of the SIR model which gives more realistic result.
+The model is called SEIR, where ``E'' stands for ``exposed''.
+The intensity of the virus depends on the exposure of an individual to the symptomatic asymptomatic carrier of the virus.
+According to Peter Turchin there is a need to add another group of exposed individuals to have a more effective model.
+That group stage would be between susceptible and infected stages.
+It will represent a group of individuals who have encountered the infection but are currently not infected.
+Let $e(t)$ be the fraction of the population which is exposed to infection but is not infected.
+As it was obtained above, for the standard SIR model the rate of change for the susceptible group is:
+\begin{equation*}
+    \frac{\partial s}{\partial t} = -\beta s(t)  i(t)
+\end{equation*}
+Let $\delta$ be the coefficient which shows the possibility of an exposed person contracting the infection.
+Then the rate of change of the exposed group can be calculated as:
+\begin{equation*}
+    \frac{\partial e}{\partial t} = \beta s(t)  i(t) - \delta e(t)
+\end{equation*}
+Since there is a possibility for exposed individuals to contract the infection, the influence of \textit{susceptibles} on the rate of infected persons is positive.
+Additionally, considering the possibility for infected individuals to recover, the impact of \textit{recovery} on the rate of infected persons is negative.
+Thus:
+\begin{equation*}
+    \frac{\partial i}{\partial t} = \delta e(t) - \gamma i(t)
+\end{equation*}
+Similarly, the rate of change of the recovered group is:
+\begin{equation*}
+    \frac{\partial r}{\partial t} = \gamma i(t)
+\end{equation*}
+Combining all the equations above will ge the following system of differential equations:
+\[
+\left\{
+    \begin{array}{l}
+        \frac{\partial s}{\partial t} = -\beta s(t)  i(t)\\
+        \frac{\partial e}{\partial t} = \beta s(t)  i(t) - \delta e(t)\\
+        \frac{\partial i}{\partial t} = \delta e(t) - \gamma i(t)\\
+        \frac{\partial r}{\partial t} = \gamma i(t)
+    \end{array}
+\right.
+\]

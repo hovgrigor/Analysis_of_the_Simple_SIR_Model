@@ -64,6 +64,7 @@
 \usetikzlibrary{shapes.geometric, shapes.misc, arrows, positioning}
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} % Define a checkmark (tick), used in section 2
 \usepackage{varioref} % Intelligent references with pageref automatically added
+\setlength{\headheight}{14.49998pt}
 \nocite{*}
 
 % Define title page
@@ -138,5 +139,22 @@ Finally, we will draw conclusions and discuss how much of an impact the model ca
 \include{Results}
 \include{RealWorld}
 \include{Conclusion}
+
+% Bibliography
+\newpage
+\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+\lhead{Bibliography}
+\rhead{}
+\renewcommand\refname{Bibliography}
+\bibliography{bib.bib} % Specify the bibliography file
+
+% Appendices, remove if unused
+\appendix
+\renewcommand\thefigure{\thesection.\arabic{figure}}
+\renewcommand\thetable{\thesection.\arabic{table}} % Renew figure and table counters and have the appendix letter before it
+\lhead{\nouppercase{\rightmark}} % Renew headers
+\rhead{}
+\include{appendix-a}
+\include{appendix-b}
 
 \end{document}
