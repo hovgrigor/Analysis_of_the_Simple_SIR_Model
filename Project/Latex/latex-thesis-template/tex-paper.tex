@@ -30,8 +30,11 @@
 \usepackage{amssymb}
 \usepackage{units} % Allow nice in-line, diagonal fractions
 % Define bibliography, update according to your needs
-\usepackage[authoryear]{natbib}
-\bibliographystyle{apalike}
+\usepackage[
+    backend=biber,
+    style=numeric,
+  ]{biblatex}
+ \addbibresource{bib.bib}
 % Allow hyperref with click-through sections and references
 \usepackage[unicode=true,pdfusetitle,bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false]{hyperref}
 % Replace "Placeholder Name" in pdfauthor with your real name and update the link colors to taste
@@ -65,7 +68,6 @@
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} % Define a checkmark (tick), used in section 2
 \usepackage{varioref} % Intelligent references with pageref automatically added
 \setlength{\headheight}{14.49998pt}
-\nocite{*}
 
 % Define title page
 \usepackage{titling}
@@ -145,8 +147,7 @@ Finally, we will draw conclusions and discuss how much of an impact the model ca
 \thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
 \lhead{Bibliography}
 \rhead{}
-\renewcommand\refname{Bibliography}
-\bibliography{bib.bib} % Specify the bibliography file
+\printbibliography
 
 % Appendices, remove if unused
 \appendix
