@@ -1,4 +1,34 @@
 \section{Numerical Methods for Solving the SIR Model}\label{Numerical_Methods}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
 \subsection{Yet another subsection}\label{multicollinearity}
+\setlength{\parindent}{20pt}
+\subsection{Determining the constants}
+\hspace{\parindent}In order to make the SIR model work, we need to have methods of approximating the parameters $\beta$ - the probability
+per unit of time that an infectious quarter will infect a noninfected quarter, and $\gamma$ - the probability
+per unit of time that an infectious quarter will recover from the disease.
+\par
+\par To calculate the $\gamma$, we start by using the formula \ref{eq:SIR}, and supposing that I is a constant
+\begin{equation}
+	\frac{\partial r}{\partial t} = \gamma I_0 \label{eq:4.2.1}
+\end{equation}
+\par By integrating \ref{eq:4.2.1} we will obtain
+\begin{equation}
+	r(t) = \gamma t I_0 \label{eq:4.2.2}
+\end{equation}
+\par At t = T days, such as $R(T)=I_0$, we obtain
+\begin{equation}
+	I_0 = \gamma T I_0 \label{eq:4.2.3}
+\end{equation}
+\begin{equation}
+	1 = \gamma T\label{eq:4.2.4}
+\end{equation}
 
-
+\par In order to determine the $\beta$, we are going to use the right truncated Poisson distribution, and find the parameter numerically.
+De Jong et al(2002)\cite{DeJorg} proved with their experiments that if we take the time interval k and divide a population into 2 types, then every week, there is a fixed probability that a
+ herd that has been infected is discovered. This herd is then immediately depopulated. If a herd is not discovered, it infects
+ a random number of other herds, with a truncated Poisson
+ distribution (The parameter A of this Poisson distribution
+ corresponds to the parameter $\beta$). In other words, we can take several compartments, 1 week each, obtain the data of newly discovered cases, number of susceptible quarters and number of infected quarters for each compartment, and find the $\beta$ by solving
+\begin{equation}
+	\beta \approx \frac{\lambda \cdot N}{I\cdot S}\label{eq:4.2.5}
+\end{equation}
+Where $\lambda$ is the parameter of Poisson distribution of new cases, N is the number of quarters, I is the total number of infected quarters, and S is the mean number of susceptible quarters (Zadoks et al, 2001)\cite{R.N.Zadoks}
