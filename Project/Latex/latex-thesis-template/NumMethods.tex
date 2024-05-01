@@ -16,19 +16,37 @@ per unit of time that an infectious quarter will recover from the disease.
 \end{equation}
 \par At t = T days, such as $R(T)=I_0$, we obtain
 \begin{equation}
-	I_0 = \gamma T I_0 \label{eq:4.2.3}
-\end{equation}
-\begin{equation}
-	1 = \gamma T\label{eq:4.2.4}
+	r = \gamma T I_0 \label{eq:4.2.3}
 \end{equation}
 
-\par In order to determine the $\beta$, we are going to use the right truncated Poisson distribution, and find the parameter numerically.
-De Jong et al(2002)\cite{DeJorg} proved with their experiments that if we take the time interval k and divide a population into 2 types, then every week, there is a fixed probability that a
- herd that has been infected is discovered. This herd is then immediately depopulated. If a herd is not discovered, it infects
- a random number of other herds, with a truncated Poisson
- distribution (The parameter A of this Poisson distribution
- corresponds to the parameter $\beta$). In other words, we can take several compartments, 1 week each, obtain the data of newly discovered cases, number of susceptible quarters and number of infected quarters for each compartment, and find the $\beta$ by solving
+\par By getting the derivative of r with respect of t, we get
+
 \begin{equation}
-	\beta \approx \frac{\lambda \cdot N}{I\cdot S}\label{eq:4.2.5}
+	 \frac{\partial r}{\partial t} = \gamma I(t) = \frac{r(t+\delta t)-r(t))}{\delta t}\label{eq:4.2.4}
 \end{equation}
-Where $\lambda$ is the parameter of Poisson distribution of new cases, N is the number of quarters, I is the total number of infected quarters, and S is the mean number of susceptible quarters (Zadoks et al, 2001)\cite{R.N.Zadoks}
+\par We pick $\delta$t as 1, and get the formula for $\gamma$
+\begin{equation}
+	 \gamma \approx \frac{r(t+1)-r(t)}{I(t)}
+\end{equation}
+\par In order to determine the $\beta$, we are going to use the formula \ref{eq:SIR} and consider the
+time t, when the disease enters a population and the number of susceptibles is equal to the population itself, $S\cong N$
+\begin{equation}
+	I^{\prime} = (\beta - \gamma) I \label
+\end{equation}
+\par let $k=\beta-\gamma$, hence $I^{\prime} \cong kI$. After solving this ODE, we get the form
+\begin{equation}
+	I(t)=I_{0}e^{kt}
+\end{equation}
+\par from here
+\begin{equation}
+	ln(I(t))=ln(I_{0}) + kt
+\end{equation}
+\par hence k can be determined by the equation
+\begin{equation}
+	k = \frac{ln(I(t))-ln(I_{0})}{t}
+\end{equation}
+\par So, as we have that $k=\beta-\gamma$, we can find $\beta$ by;
+\begin{equation}
+	\beta = k - \gamma
+\end{equation}
+\par where $\gamma$ and $k$ can be determined from a real sample of data. \cite{Math_Hands-On_with_Python}
