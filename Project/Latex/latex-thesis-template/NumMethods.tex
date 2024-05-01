@@ -1,6 +1,63 @@
 \section{Numerical Methods for Solving the SIR Model}\label{Numerical_Methods}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
-\subsection{Yet another subsection}\label{multicollinearity}
-\setlength{\parindent}{20pt}
+\subsection{Solving Numerically Using Euler's Method}\label{multicollinearity}
+\hspace{\parindent} One of the most known ways of solving an ODE system, is Euler's method. This method is solving the IVT;
+\begin{equation}
+	\left\{\begin{aligned}
+		& y'(x) = f(x,y(x)), x \in [a,b] \\
+		& y'(x_0)=y_0 \\
+	\end{aligned}
+\end{equation}
+
+\par here we are taking a mesh of $x$ in the necessary range and calculating the $y(x)$ only at points of $x_K$
+After that, using the initial $y_0$, we approximate the next $y$, by using the formula
+\begin{equation}
+	y_{k+1} = y_k + h f(x_k,y_k)
+\end{equation}
+\par where $h=\frac{b-a}{n}$ is the stepsize of the $x$.
+\par In our case, we are going to solve 3 such IVT's;
+\[
+	\left\{
+		\begin{array}{l}
+			\frac{\partial s}{\partial t} = -\beta s(t)  i(t)  \\
+			s(t_0)=s_0
+		\end{array}
+	\right.
+\]
+
+\[
+	\left\{
+		\begin{array}{l}
+			\frac{\partial i}{\partial t} = \beta s(t)  i(t) - \gamma i(t) \\
+			i(t_0)=i_0
+		\end{array}
+	\right.
+\]
+
+\[
+	\left\{
+		\begin{array}{l}
+			\frac{\partial r}{\partial t} = \gamma i(t) \\
+			r(t_0)=r_0
+		\end{array}
+	\right.
+\]
+
+\par As you can see, we are going to need the initial $t_0$ value, as well as the number
+of susceptible, infected, and recovered population at that $t_0$.
+After obtaining the sufficient pieces of information, we can use the Euler's formula and obtain
+
+\[
+	\left\{
+		\begin{array}{l}
+			s_{k+1}=s_k - \beta \cdot h \cdot s_k \cdot i_k \\
+			i_{k+1}=i_k + (\beta \cdot s_k \cdot i_k - \gamma \cdot i_k)h \\
+			r_{k+1}=r_k+ \gamma \cdot h \cdot i_k
+		\end{array}
+	\right.
+\]
+\par Thus we are going to be able to determine the needed values of $s(t)$, $i(t)$ and $r(t)$
+at the necessary $t_k$ date by doing the necessary amount of iterations.
+
 \subsection{Determining the constants}
 \hspace{\parindent}In order to make the SIR model work, we need to have methods of approximating the parameters $\beta$ - the probability
 per unit of time that an infectious quarter will infect a noninfected quarter, and $\gamma$ - the probability
