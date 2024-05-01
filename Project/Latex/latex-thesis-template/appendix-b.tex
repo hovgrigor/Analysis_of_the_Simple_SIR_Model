@@ -1,4 +1,35 @@
-\section{Appendix B}\label{appendix-b}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+\section{Appendix: Continuation of Analytical Solutions}\label{appendix-b}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
 \setcounter{figure}{0}
 \setcounter{table}{0}
-This is the Appendix B.
+Recall that by transforming the ODE we obtained the form
+\begin{equation} \label{eq:first}
+	z^{\prime\prime} = x_{0} \beta z^{\prime} e^{-\frac{\beta z}{\gamma}} - \gamma z^{\prime}
+\end{equation}
+From here we need to introduce a new function 
+\begin{equation} \label{eq:second}
+	u = e^{-\frac{\beta}{\gamma}z}, \quad u_0 = e^{-\frac{\beta}{\gamma}N_3}\\
+\end{equation}
+Also note that we got the initial value by substituting $z$ with $z(0)$.\\
+Next we substitute (\ref{eq:second}) into (\ref{eq:first}) and by doing a lot of simplification we get
+\begin{equation} \label{eq:third}
+	u(u)^{\prime\prime} - (u^{\prime})^2 + (\gamma - x_0\beta u)u(u)^\prime = 0
+\end{equation}
+Now we introduce another function $\phi = t^{\prime}_{u}$, and by substituting it back we get
+\begin{equation} \label{eq:forth}
+	\phi^{\prime}_u + \phi\frac{1}{u} = (\gamma-x_0\beta u)\phi^2
+\end{equation}
+which is a Bernoulli type differential equation with the solution given as
+\begin{equation} \label{eq:fifth}
+	\phi = \frac{1}{u(C_1-\gamma \ln u + x_0\beta u)}
+\end{equation}
+where $C_1$ is an integration constant. Since $\phi = t^{\prime}_{u}$ by integrating (\ref{eq:fifth}) we get an equation for time
+\begin{equation} \label{eq:sixth}
+	t = \int_{u_0}^{u} \frac{du}{u(C_1-\gamma \ln u + x_0\beta u)}
+\end{equation}
+hence with all of the we can get the parametric equation for the simple SIR model with $u$ taken as parameter
+\begin{align*} \label{eq:parameter}
+	x &= x_0u,\\
+	y &= \frac{\gamma}{\beta}\ln u - x_0u - \frac{C_1}{\beta},\\
+	z &= -\frac{\gamma}{\beta}\ln u
+\end{align*}
+and by adding them we can obtain than $C_1 = -\beta N$.
