@@ -1,11 +1,14 @@
 \section{Numerical Methods for Solving the SIR Model}\label{Numerical_Methods}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
 \subsection{Solving Numerically Using Euler's Method}\label{multicollinearity}
+\lhead{Numerical Methods}
+
 \hspace{\parindent} One of the most known ways of solving an ODE system, is Euler's method. This method is solving the IVT;
 \begin{equation}
-	\left\{\begin{aligned}
-		& y'(x) = f(x,y(x)), x \in [a,b] \\
-		& y'(x_0)=y_0 \\
-	\end{aligned}
+	\begin{system}
+		y'(x) = f(x,y(x)), x \in [a,b]
+		\\
+		y'(x_0)=y_0 
+	\end{system}
 \end{equation}
 
 \par here we are taking a mesh of $x$ in the necessary range and calculating the $y(x)$ only at points of $x_K$
@@ -64,10 +67,11 @@ at the necessary $t_k$ date by doing the necessary amount of iterations.
 the IVT
 
 \begin{equation}
-	\left\{\begin{aligned}
-		& y'(x) = f(x,y(x)), x \in [a,b] \\
-		& y'(x_0)=y_0 \\
-	\end{aligned}
+	\begin{system}
+		y'(x) = f(x,y(x)), x \in [a,b] 
+		\\
+		y'(x_0)=y_0 
+	\end{system}
 \end{equation}
 
 \par But this time, y
@@ -103,7 +107,7 @@ per unit of time that an infectious quarter will recover from the disease.
 \par In order to determine the $\beta$, we are going to use the formula \ref{eq:SIR} and consider the
 time t, when the disease enters a population and the number of susceptibles is equal to the population itself, $S\cong N$
 \begin{equation}
-	I^{\prime} = (\beta - \gamma) I \label
+	I^{\prime} = (\beta - \gamma) I 
 \end{equation}
 \par let $k=\beta-\gamma$, hence $I^{\prime} \cong kI$. After solving this ODE, we get the form
 \begin{equation}

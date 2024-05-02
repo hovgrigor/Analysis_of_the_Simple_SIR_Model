@@ -72,7 +72,9 @@
 \setlength{\headheight}{14.49998pt}
 \counterwithin*{equation}{section} % Reset numbering for each chapter
 \counterwithin*{equation}{subsection}
-
+\newenvironment{system}%
+{\left\lbrace\begin{array}{@{}l@{}}}%
+{\end{array}\right.}
 % Define title page
 \usepackage{titling}
 \renewcommand\maketitlehooka{\null\mbox{}\vfill} % To vertically center it
