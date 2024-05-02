@@ -11,6 +11,10 @@ with changed variables for a better readability.
 		&y^{\prime} = \beta x  y - \gamma y \label{eq:oneb}
 		\\
 		&z^{\prime} = \gamma z \label{eq:onec}
+		\\
+		&x + y + z = N
+		\\
+		&x_0 = N_1, y_0 = N_2, z_0 = N_3
 	\end{empheq}
 \end{subequations}
 We begin by differentiating (\ref{eq:onea}) with respect to time t, and substituting y with $y = \frac{-x^{\prime}}{\beta x}$ from the same equation
@@ -68,5 +72,20 @@ Finally if we combine (\ref{eq:six}), (\ref{eq:seven}) and (\ref{eq:four}) into 
 \begin{equation} \label{eq:eight}
 	z^{\prime\prime} = x_{0} \beta z^{\prime} e^{-\frac{\beta z}{\gamma}} - \gamma z^{\prime}
 \end{equation}
-Which is equivalent to the system of equation \ref{eq:SIR} 
+Which is equivalent to the system of equation (\ref{eq:SIR}). \\
+From this point we can solve the ODE by transforming (\ref{eq:eight}) into a Bernoulli type differential equation and solving it
+by the given formula. Since this is out of scope for numerical methods class, the full solution can be found in appendix (\ref{appendix-b}).
+
+\pagebreak
+
+\begin{figure}[H]
+	\caption{Graphical Examples of the Analytical Solution}
+	\centering
+	\includegraphics[width=16cm]{Figure_Analitical.png}
+\end{figure}
+Plotted Using Values$\quad$ $N_1=20, \quad N_2=15, \quad N_3=10, \quad \beta = 0.01, \quad \gamma = 0.02$
+
+	
+
+	
 
