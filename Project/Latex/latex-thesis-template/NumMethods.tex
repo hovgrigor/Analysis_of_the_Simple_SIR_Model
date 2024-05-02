@@ -74,8 +74,36 @@ the IVT
 	\end{system}
 \end{equation}
 
-\par But this time, y
+\par But this time, the Method use a different approach, namely
 
+\begin{equation}
+	y'(x) \approx \frac{y_n-y_{n+1}}{h}
+\end{equation}
+
+\par By plugging the functions that interest us, we will get the system
+
+\begin{equation}
+	\begin{system}
+	\frac{s_{t+1}-s_{t}}{h}=-\frac{\beta \cdot s_{t+1} \cdot i_{t+1}}{n}
+	\\
+	\frac{i_{t+1}-i_{t}}{h}=\frac{\beta \cdot s_{t+1} \cdot i_{t+1}}{n} - \gamma i_{t+1}
+	\\
+	\frac{r_{t+1}-r_{t}}{h} = \gamma i_{t+1}
+	\end{system}
+\end{equation}
+
+\par From here, we have \beta, \enspace \gamma, \enspace \var{n} ,\enspace h, \enspace  $s_t$, \enspace $i_t$, \enspace $r_t$. Hence we are
+left with 3 equations and 3 unknowns. By using direct or numerical approaches, we can find the $s_{t+1}, i_{t+1}, r_{t+1}$ by solving this SLE
+
+\begin{equation}
+	\begin{system}
+	s_{t+1} = s_t - h \cdot \frac{\beta s_{t+1} i_{t+1}}{n}
+	\\
+	i_{t+1} = i_t + h \cdot (\frac{\beta s_{t+1} i_{t+1}}{n} - \gamma i_{t+1})
+	\\
+	r_{t+1}= r_t + h\cdot \gamma i_{t+1}
+	\end{system}
+\end{equation}
 
 \subsection{Determining the constants}
 \hspace{\parindent}In order to make the SIR model work, we need to have methods of approximating the parameters $\beta$ - the probability
