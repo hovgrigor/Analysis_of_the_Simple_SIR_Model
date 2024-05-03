@@ -1,18 +1,13 @@
-Project/Latex/latex-thesis-template/*.aux
-Project/Latex/latex-thesis-template/tex-paper.bbl
-Project/Latex/latex-thesis-template/tex-paper.fdb_latexmk
-Project/Latex/latex-thesis-template/tex-paper.fls
-Project/Latex/latex-thesis-template/tex-paper.out
-Project/Latex/latex-thesis-template/tex-paper.pdf
-Project/Latex/latex-thesis-template/tex-paper.log
-Project/Latex/latex-thesis-template/tex-paper.synctex.gz
-Project/Latex/latex-thesis-template/tex-paper.toc
-Project/Latex/latex-thesis-template/tex-paper.blg
-Project/Latex/latex-thesis-template/tex-paper.bcf
-Project/Latex/latex-thesis-template/tex-paper.run.xml
-Project/Latex/latex-thesis-template/indent.log
-Figures/
-Homework Done/
-Homework to Do/
-Python/
-Project/Data/
+Project/Latex/SIR_Paper_Latex/*.aux
+Project/Latex/SIR_Paper_Latex/tex-paper.bbl
+Project/Latex/SIR_Paper_Latex/tex-paper.fdb_latexmk
+Project/Latex/SIR_Paper_Latex/tex-paper.fls
+Project/Latex/SIR_Paper_Latex/tex-paper.out
+Project/Latex/SIR_Paper_Latex/tex-paper.pdf
+Project/Latex/SIR_Paper_Latex/tex-paper.log
+Project/Latex/SIR_Paper_Latex/tex-paper.synctex.gz
+Project/Latex/SIR_Paper_Latex/tex-paper.toc
+Project/Latex/SIR_Paper_Latex/tex-paper.blg
+Project/Latex/SIR_Paper_Latex/tex-paper.bcf
+Project/Latex/SIR_Paper_Latex/tex-paper.run.xml
+Project/Latex/SIR_Paper_Latex/indent.log
