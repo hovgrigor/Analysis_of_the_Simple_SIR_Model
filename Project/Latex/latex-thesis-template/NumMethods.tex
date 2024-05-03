@@ -84,9 +84,9 @@ the IVT
 
 \begin{equation}
 	\begin{system}
-	\frac{s_{t+1}-s_{t}}{h}=-\frac{\beta \cdot s_{t+1} \cdot i_{t+1}}{n}
+	\frac{s_{t+1}-s_{t}}{h}=-\beta \cdot s_{t+1} \cdot i_{t+1}
 	\\
-	\frac{i_{t+1}-i_{t}}{h}=\frac{\beta \cdot s_{t+1} \cdot i_{t+1}}{n} - \gamma i_{t+1}
+	\frac{i_{t+1}-i_{t}}{h}=\beta \cdot s_{t+1} \cdot i_{t+1} - \gamma i_{t+1}
 	\\
 	\frac{r_{t+1}-r_{t}}{h} = \gamma i_{t+1}
 	\end{system}
@@ -97,15 +97,15 @@ left with 3 equations and 3 unknowns. By using direct or numerical approaches, w
 
 \begin{equation}
 	\begin{system}
-	s_{t+1} = s_t - h \cdot \frac{\beta s_{t+1} i_{t+1}}{n}
+	s_{t+1} = s_t - h \cdot \beta s_{t+1} i_{t+1}
 	\\
-	i_{t+1} = i_t + h \cdot (\frac{\beta s_{t+1} i_{t+1}}{n} - \gamma i_{t+1})
+	i_{t+1} = i_t + h \cdot (\beta s_{t+1} i_{t+1} - \gamma i_{t+1})
 	\\
 	r_{t+1}= r_t + h\cdot \gamma i_{t+1}
 	\end{system}
 \end{equation}
 
-\subsection{Determining the constants}
+\subsection{Determining the gamma}
 \hspace{\parindent}In order to make the SIR model work, we need to have methods of approximating the parameters $\beta$ - the probability
 per unit of time that an infectious quarter will infect a noninfected quarter, and $\gamma$ - the probability
 per unit of time that an infectious quarter will recover from the disease.
@@ -132,25 +132,3 @@ per unit of time that an infectious quarter will recover from the disease.
 \begin{equation}
 	 \gamma \approx \frac{r(t+1)-r(t)}{I(t)}
 \end{equation}
-\par In order to determine the $\beta$, we are going to use the formula \ref{eq:SIR} and consider the
-time t, when the disease enters a population and the number of susceptibles is equal to the population itself, $S\cong N$
-\begin{equation}
-	I^{\prime} = (\beta - \gamma) I 
-\end{equation}
-\par let $k=\beta-\gamma$, hence $I^{\prime} \cong kI$. After solving this ODE, we get the form
-\begin{equation}
-	I(t)=I_{0}e^{kt}
-\end{equation}
-\par from here
-\begin{equation}
-	ln(I(t))=ln(I_{0}) + kt
-\end{equation}
-\par hence k can be determined by the equation
-\begin{equation}
-	k = \frac{ln(I(t))-ln(I_{0})}{t}
-\end{equation}
-\par So, as we have that $k=\beta-\gamma$, we can find $\beta$ by;
-\begin{equation}
-	\beta = k - \gamma
-\end{equation}
-\par where $\gamma$ and $k$ can be determined from a real sample of data. \cite{Math_Hands-On_with_Python}
