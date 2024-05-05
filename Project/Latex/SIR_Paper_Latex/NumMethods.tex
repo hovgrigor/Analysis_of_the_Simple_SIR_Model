@@ -1,8 +1,8 @@
 \section{Numerical Methods for Solving the SIR Model}\label{Numerical_Methods}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
-\subsection{Solving Numerically Using Euler's Method}\label{multicollinearity}
+\subsection{Euler's Method for the SIR Model}\label{multicollinearity}
 \lhead{Numerical Solution}
 
-\hspace{\parindent} One of the most known ways of solving an ODE system, is Euler's method. This method is solving the IVT;
+\hspace{\parindent} One of the most known ways of solving an ODE system, is Euler's method. This method is solving the IVP.
 \begin{equation}
 	\begin{system}
 		y'(x) = f(x,y(x)), x \in [a,b]
@@ -11,13 +11,13 @@
 	\end{system}
 \end{equation}
 
-\par here we are taking a mesh of $x$ in the necessary range and calculating the $y(x)$ only at points of $x_K$
+\par Here we are taking a mesh of $x$ in the necessary range and calculating the $y(x)$ only at points of $x_K$
 After that, using the initial $y_0$, we approximate the next $y$, by using the formula
 \begin{equation}
 	y_{k+1} = y_k + h f(x_k,y_k)
 \end{equation}
 \par where $h=\frac{b-a}{n}$ is the stepsize of the $x$.
-\par In our case, we are going to solve 3 such IVT's;
+\par In our case, we are going to solve 3 such IVP's;
 \[
 	\left\{
 		\begin{array}{l}
@@ -45,7 +45,7 @@ After that, using the initial $y_0$, we approximate the next $y$, by using the f
 	\right.
 \]
 
-\par As you can see, we are going to need the initial $t_0$ value, as well as the number
+\par We are going to need the initial $t_0$ value, as well as the number
 of susceptible, infected, and recovered population at that $t_0$.
 After obtaining the sufficient pieces of information, we can use the Euler's formula and obtain
 
@@ -62,9 +62,9 @@ After obtaining the sufficient pieces of information, we can use the Euler's for
 \par Thus we are going to be able to determine the needed values of $s(t)$, $i(t)$ and $r(t)$
 at the necessary $t_k$ date by doing the necessary amount of iterations.
 
-\subsection{Backward Euler's Method}
+\subsection{Backward Euler's Method for the SIR Model}
 \par Just like forward Euler's Method described previously, backward Euler's method also aims to solve
-the IVT
+the IVP.
 
 \begin{equation}
 	\begin{system}
@@ -74,7 +74,7 @@ the IVT
 	\end{system}
 \end{equation}
 
-\par But this time, the Method use a different approach, namely
+\par But this time, the Method uses a different approach, namely
 
 \begin{equation}
 	y'(x) \approx \frac{y_n-y_{n+1}}{h}
@@ -105,16 +105,16 @@ left with 3 equations and 3 unknowns. By using direct or numerical approaches, w
 	\end{system}
 \end{equation}
 
-\subsection{Determining the gamma}
+\subsection{Approximation of the Recovery Rate}
 \hspace{\parindent}In order to make the SIR model work, we need to have methods of approximating the parameters $\beta$ - the probability
 per unit of time that an infectious quarter will infect a noninfected quarter, and $\gamma$ - the probability
 per unit of time that an infectious quarter will recover from the disease.
 \par
-\par To calculate the $\gamma$, we start by using the formula \ref{eq:SIR}, and supposing that I is a constant
+\par To calculate the $\gamma$, we start by using the formula (\ref{eq:SIR}), and supposing that I is a constant
 \begin{equation}
 	\frac{\partial r}{\partial t} = \gamma I_0 \label{eq:4.2.1}
 \end{equation}
-\par By integrating \ref{eq:4.2.1} we will obtain
+\par By integrating (\ref{eq:4.2.1}) we will obtain
 \begin{equation}
 	r(t) = \gamma t I_0 \label{eq:4.2.2}
 \end{equation}

@@ -19,7 +19,7 @@ In this chapter we will try to predict the epidemic trend based on the Covid-19 
 \subsection{Calculation \& RealWorld Use}\label{Applicaltions}
 In both figures is depicted the prediction we obtained by using half the data 
 of the Covid cases in their respective countries. The difficulty of predictions stems from
-trying to correctly identify the optimal values for $\alpha$ and $\beta$. Firstly we need to defined what we mean 
+trying to correctly identify the optimal values for $\gamma$ (Recovery Rate) and $\beta$ (Infection Rate). Firstly we need to define what we mean
 by "optimal" values. In this case optimal was defined in a way such that the function
 
 \begin{equation*}
@@ -28,9 +28,9 @@ by "optimal" values. In this case optimal was defined in a way such that the fun
 
 is minimal. \\
 
-Here $y(t)$ is the real world data of susceptible, infected or recovered data in time $t$. 
+Here $y(t)$ is the real world data of susceptible, infected or recovered in time $t$.
 And $y_t$ is the point in the same time $t$ that we obtained by approximating the data with the SIR model.
-Hence we want values of $\alpha$ and $\beta$ such that
+Hence we want values of $\gamma$ and $\beta$ such that
 
 \begin{equation*}
 	\sum_{t=0}^{n} (S(t)-S_t)^2 + \sum_{t=0}^{n} (I(t)-I_t)^2 + \sum_{t=0}^{n} (R(t)-R_t)^2
@@ -38,10 +38,10 @@ Hence we want values of $\alpha$ and $\beta$ such that
 
 is minimal.\\
 
-Calculating this function for $\alpha$ and $\beta$ is a very difficult task and even the 
+Calculating this function for $\gamma$ and $\beta$ is a very difficult task and even the
 approximations we provided are not optimal, so we went with the brute force approach.\\
 We took half the data and calculated the points for the Euler's approximation with different values for 
-$\alpha$ and $\beta$. Lastly we calculated the error for each combination of $\alpha$ and $\beta$ and took 
+$\gamma$ and $\beta$. Lastly we calculated the error for each combination of $\gamma$ and $\beta$ and took
 the ones corresponding to the min of the error. What we obtained were not the most optimal values but they were still 
 close. 
 
