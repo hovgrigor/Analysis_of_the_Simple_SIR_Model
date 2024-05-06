@@ -9,17 +9,18 @@
 %
 %
 \documentclass{beamer}
-\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{page number in head/foot}[totalframenumber]
 
 
-\usetheme{Warsaw}
+\usetheme{Marburg}
+
 
 \beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
 \begin{document}
 \title{Mathematical Theory of Infectious Disease Epidemics}
-\author{Grigor Hovhannisyan\\
-Aram Abrahamyan\\
-Meruzhan Khachatryan}
+\author{G. Hovhannisyan\\
+A. Abrahamyan\\
+M. Khachatryan}
 \date{\today}
 
 
@@ -33,52 +34,37 @@ Meruzhan Khachatryan}
 
 \section{Introduction}
 \begin{frame}\frametitle{Title}
-Each frame should have a title.
-\end{frame}
-\subsection{Subsection no.1.1  }
-\begin{frame}
-Without title somethink is missing.
+\begin{center}
+    Each frame should have a title.
+\end{center}
 \end{frame}
 
 
 \section{Mathematical Formulation}
-\subsection{Lists I}
-\begin{frame}\frametitle{unnumbered lists}
+\begin{frame}\frametitle{Mathematical Formulation}
+\begin{center}
+    \textbf{Mathematical Formulation}
+\end{center}
+\end{frame}
+
+
+\begin{frame}\frametitle{Mathematical Formulation}
 \begin{itemize}
-\item Introduction to  \LaTeX
-\item Course 2
-\item Termpapers and presentations with \LaTeX
-\item Beamer class
+\item Types of Variables
+\item Important Assumptions
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{lists with pause}
-\begin{itemize}
-\item Introduction to  \LaTeX \pause
-\item Course 2 \pause
-\item Termpapers and presentations with \LaTeX \pause
-\item Beamer class
-\end{itemize}
+\subsection{Types of Variables}
+\begin{frame}\frametitle{Independent and Dependent Variables}
+    asd
 \end{frame}
 
-\subsection{Lists II}
-\begin{frame}\frametitle{numbered lists}
-\begin{enumerate}
-\item Introduction to  \LaTeX
-\item Course 2
-\item Termpapers and presentations with \LaTeX
-\item Beamer class
-\end{enumerate}
+\subsection{Important Assumptions}
+\begin{frame}\frametitle{Importnat Assumptions}
+    asd
 \end{frame}
 
-\begin{frame}\frametitle{numbered lists with pause}
-\begin{enumerate}
-\item Introduction to  \LaTeX \pause
-\item Course 2 \pause
-\item Termpapers and presentations with \LaTeX \pause
-\item Beamer class
-\end{enumerate}
-\end{frame}
 
 \section{Analytical Solution}
 \subsection{Tables}
@@ -110,9 +96,6 @@ A & B & C \\
 \subsection{blocs}
 \begin{frame}\frametitle{blocs}
 
-\begin{block}{title of the bloc}
-bloc text
-\end{block}
 
 \begin{exampleblock}{title of the bloc}
 bloc text
@@ -123,6 +106,7 @@ bloc text
 bloc text
 \end{alertblock}
 \end{frame}
+
 
 \section{Simulation Results on Real-World Data}
 \subsection{split screen}
@@ -153,7 +137,6 @@ Sascha Frank &  Course serial  \\
 \subsection{Pictures}
 \begin{frame}\frametitle{pictures in latex beamer class}
 \begin{figure}
-\includegraphics[scale=0.5]{PIC1}
 \caption{show an example picture}
 \end{figure}
 \end{frame}
@@ -173,9 +156,6 @@ Sascha Frank &  Course serial  \\
 \end{column}
 \begin{column}{5cm}
 \begin{overprint}
-\includegraphics<2>{PIC1}
-\includegraphics<4>{PIC2}
-\includegraphics<6>{PIC3}
 \end{overprint}
 \end{column}
 \end{columns}
@@ -186,7 +166,6 @@ Sascha Frank &  Course serial  \\
 \begin{frame}[plain]
 \frametitle{plain, or a way to get more space}
 \begin{figure}
-\includegraphics[scale=0.5]{PIC1}
 \caption{show an example picture}
 \end{figure}
 \end{frame}
