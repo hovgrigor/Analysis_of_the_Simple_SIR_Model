@@ -93,28 +93,41 @@ each of the three categories. So, if $N$ is the total population we have:
     $$r(t) = \frac{R(t)}{N}\text{the \textit{recovered fraction} of the population.}$$
 \end{frame}
 
-\subsection{Important Assumptions}
-\begin{frame}\frametitle{Importnat Assumptions}
-    \begin{itemize}
-        \item Natural births, deaths, immigration and other similar factors are being ignored.
-        \item The only way an individual leaves the susceptible group is by becoming infected.
-        \item The rate of change of the number of susceptible individuals, $S(t)$, over time depends on the existing number of susceptibles, the number of individuals currently infected, and the level of interaction between susceptibles and infected individuals.
-        \item Each infected individual initiates a fixed number $\beta$ of contacts per day that can potentially transmit the disease.
-        \item A uniformly mixed population, the proportion of these contacts involving susceptibles is denoted by $s(t)$. Therefore, on average, each
-infected individual gives rise to $\beta \cdot s(t)$ new daily infections.
-        \item A fixed fraction $\gamma$ of the infected group will be recovered during any given day.
-    \end{itemize}
-\end{frame}
-
 \begin{frame}[t]\frametitle{Importnat Assumptions}
 These assumptions inform the derivatives of our dependent variables.
     \begin{itemize}
         \item $\frac{\partial{s}}{\partial{t}}=-\beta s(t)i(t)$
         \item $\frac{\partial{r}}{\partial{t}}=\gamma i(t)$
     \end{itemize}
+\begin{align}
+    \frac{\partial{s}}{\partial{t}}&=-\beta s(t)i(t)\\
+    \frac{\partial{r}}{\partial{t}}&=\gamma i(t)
+\end{align}
+
 As the sum of \textit{susceptable}, \textit{infected} and \textit{recovered} people gives the whole population, it means that
+\begin{align}
+    \frac{\partial{s}}{\partial{t}}+\frac{\partial{i}}{\partial{t}}+\frac{\partial{r}}{\partial{t}}=0
+\end{align}
+
+To get the differential equation for infecteds it is enough to plug equations (1) and (2)
+into equation (3). The result will be:
+    \begin{align}
+        \frac{\partial{i}}{\partial{t}}=-\beta s(t)i(t)-\gamma i(t)
+    \end{align}
 \end{frame}
 
+\begin{frame}\frametitle{Important Assumptions}
+Combining all three equations will give the following system of differential equations:
+\begin{equation*}
+    \begin{system}
+        \frac{\partial{s}}{\partial{t}}=-\beta s(t)i(t)\\
+        \\
+        \frac{\partial{i}}{\partial{t}}=-\beta s(t)i(t)-\gamma i(t)\\
+        \\
+        \frac{\partial{r}}{\partial{t}}=\gamma i(t)
+    \end{system}
+\end{equation*}
+\end{frame}
 
 \section{Analytical Solution}
 \begin{frame}\frametitle{Analytical Solution}
