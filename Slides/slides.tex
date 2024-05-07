@@ -9,11 +9,7 @@
 %
 %
 \documentclass{beamer}
-<<<<<<< HEAD
 \graphicspath{ {figures/} }
-=======
-\usepackage{amsmath}
->>>>>>> 6028d618623fc925de136b6c60bea141b811250c
 \setbeamertemplate{page number in head/foot}[totalframenumber]
 \usetheme{Marburg}
 \newenvironment{system}%
@@ -22,16 +18,8 @@
 
 \beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
 \begin{document}
-\newenvironment{system}%
-{\left\lbrace\begin{array}{@{}l@{}}}%
-{\end{array}\right.}
-
 \title{Mathematical Theory of Infectious Disease Epidemics}
-<<<<<<< HEAD
 \author{G. Hovhannisyan  A. Abrahamyan\\
-=======
-\author{G. Hovhannisyan A. Abrahamyan\\
->>>>>>> 6028d618623fc925de136b6c60bea141b811250c
 M. Khachatryan}
 \date{\today}
 
@@ -120,34 +108,11 @@ infected individual gives rise to $\beta \cdot s(t)$ new daily infections.
 
 \begin{frame}[t]\frametitle{Importnat Assumptions}
 These assumptions inform the derivatives of our dependent variables.
-\begin{align}
-    \frac{\partial{s}}{\partial{t}}&=-\beta s(t)i(t)\\
-    \frac{\partial{r}}{\partial{t}}&=\gamma i(t)
-\end{align}
-
+    \begin{itemize}
+        \item $\frac{\partial{s}}{\partial{t}}=-\beta s(t)i(t)$
+        \item $\frac{\partial{r}}{\partial{t}}=\gamma i(t)$
+    \end{itemize}
 As the sum of \textit{susceptable}, \textit{infected} and \textit{recovered} people gives the whole population, it means that
-\begin{align}
-    \frac{\partial{s}}{\partial{t}}+\frac{\partial{i}}{\partial{t}}+\frac{\partial{r}}{\partial{t}}=0
-\end{align}
-
-To get the differential equation for infecteds it is enough to plug equations (1) and (2)
-into equation (3). The result will be:
-    \begin{align}
-        \frac{\partial{i}}{\partial{t}}=-\beta s(t)i(t)-\gamma i(t)
-    \end{align}
-\end{frame}
-
-\begin{frame}\frametitle{Important Assumptions}
-Combining all three equations will give the following system of differential equations:
-\begin{equation*}
-    \begin{system}
-        \frac{\partial{s}}{\partial{t}}=-\beta s(t)i(t)\\
-        \\
-        \frac{\partial{i}}{\partial{t}}=-\beta s(t)i(t)-\gamma i(t)\\
-        \\
-        \frac{\partial{r}}{\partial{t}}=\gamma i(t)
-    \end{system}
-\end{equation*}
 \end{frame}
 
 
