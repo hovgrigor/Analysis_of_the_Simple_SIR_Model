@@ -13,6 +13,14 @@
 M. Khachatryan}
 \date{\today}
 
+\AtEndDocument{\begin{frame}
+                  \begin{center}
+                      Thank You For Attention!\\
+                      More Information is available at Our\\
+                      \href{https://github.com/hovgrigor/Analysis_of_the_Simple_SIR_Model}{Github Repository}
+                  \end{center}
+               \end{frame}
+                }
 
 \begin{frame}
 \titlepage
@@ -83,6 +91,7 @@ each of the three categories. So, if $N$ is the total population we have:
     $$r(t) = \frac{R(t)}{N}\text{the \textit{recovered fraction} of the population.}$$
 \end{frame}
 
+\subsection{Important Assumptions}
 \begin{frame}[t]\frametitle{Importnat Assumptions}
 These assumptions inform the derivatives of our dependent variables.
     \begin{itemize}
@@ -247,67 +256,28 @@ $y_0$, we can iteratively predict the $y_{k+1}=y(x+h)$, by using the system
 \end{frame}
 
 \section{Simulation Results on Real-World Data}
-\subsection{split screen}
-
-\begin{frame}\frametitle{splitting screen}
-\begin{columns}
-\begin{column}{5cm}
-\begin{itemize}
-\item Beamer
-\item Beamer Class
-\item Beamer Class Latex
-\end{itemize}
-\end{column}
-\begin{column}{5cm}
-\begin{tabular}{|c|c|}
-\hline
-\textbf{Instructor} & \textbf{Title} \\
-\hline
-Sascha Frank &  \LaTeX \ Course 1 \\
-\hline
-Sascha Frank &  Course serial  \\
-\hline
-\end{tabular}
-\end{column}
-\end{columns}
+\subsection{Simulations on USA's COVID-19 Data}
+\begin{frame}\frametitle{Simulations}
+    \begin{center}
+        \textbf{Simulations on USA's COVID-19 Data}
+    \end{center}
 \end{frame}
 
-\subsection{Pictures}
-\begin{frame}\frametitle{pictures in latex beamer class}
-\begin{figure}
-\caption{show an example picture}
-\end{figure}
+\begin{frame}\frametitle{Simulations on USA's COVID-19 Data}
+    \begin{figure}
+        \caption{Comparison Plot of Real data and Prediction by SIR}
+        \centering
+        \includegraphics[width=10cm]{Figure_USAPredict.png}
+    \end{figure}
 \end{frame}
 
-\subsection{joining picture and lists}
-
-\begin{frame}
-\frametitle{pictures and lists in beamer class}
-\begin{columns}
-\begin{column}{5cm}
-\begin{itemize}
-\item<1-> subject 1
-\item<3-> subject 2
-\item<5-> subject 3
-\end{itemize}
-\vspace{3cm}
-\end{column}
-\begin{column}{5cm}
-\begin{overprint}
-\end{overprint}
-\end{column}
-\end{columns}
+\subsection{Simulations on Armenia's COVID-19 Data}
+\begin{frame}\frametitle{Simulations on Armenia's COVID-19 Data}
+    \begin{figure}
+        \caption{Comparison Plot of Real data and Prediction by SIR}
+        \centering
+        \includegraphics[width=10cm]{Figure_ArmPredict.png}
+    \end{figure}
 \end{frame}
-
-
-\subsection{pictures which need more space}
-\begin{frame}[plain]
-\frametitle{plain, or a way to get more space}
-\begin{figure}
-\caption{show an example picture}
-\end{figure}
-\end{frame}
-
-
 
 \end{document}
